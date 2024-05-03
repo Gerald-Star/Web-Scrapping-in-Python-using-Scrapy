@@ -1,0 +1,60 @@
+
+
+
+Question
+Referring to the divs variable you created in the previous exercise, choose the incorrect response.
+
+Possible answers
+
+
+divs[2] is a Selector object, which is the third div element in the HTML code.
+
+By chaining, the codedivs[2].xpath('./*') will select all the children of the third div element.
+
+The code len( divs[2].xpath('./*') ) gives the total number of children of the third div element in the HTML code.
+
+divs[2] is another SelectorList of length 2- ANswer
+
+
+
+
+2. Rosetta CSStone
+00:40 - 01:40
+Since we are so familiar with XPath at this point, let's quickly translate between what we know in XPath to what we use in CSS Locator notation. A single forward-slash in XPath is replaced by a greater-than symbol in CSS Locator notation; so, a greater-than symbol moves us forward one generation. There is an exception where if the first character of an XPath is a single forward-slash, we ignore it. The double forward-slash in XPath is replaced by a blank space; so a blank space looks forward all generations. And again, we ignore a double forward-slash if its the first part of the xpath string. Given an XPath with square brackets filled with a number we replace it with the colon-nth-of-type call with that number as its argument.
+
+3. Rosetta CSStone
+01:40 - 02:26
+As an example, suppose we have the XPath string given on top. The corresponding CSS Locator string is then given below. Notice that the single forward-slash between html and body as well as between div and p are replaced with greater-than symbols, but that the very first forward slash is ignored. We see that the double forward-slash between body and div is replaced by a blank space; and that the square-bracket 2 is replaced by :nth-of-type(2). Look how fast we've already translated a ton of what we know in XPath to CSS Locators!
+
+4. Attributes in CSS
+02:26 - 02:57
+One good reason to learn CSS Locator notation is that selecting elements by class or id attributes uses a very simple notation. For a CSS Locator, to select elements by which class they belong to, we simply follow the tag-name by a period followed by the class name. To select an element by id, we follow the tag-name by a pound sign followed by the id.
+
+5. Attributes in CSS
+02:57 - 03:41
+To illustrate how this works, we could create a CSS Locator string which first navigates to the div element whose id is "uid" (using pound sign), then down one generation (using the greater-than sign), and finally to whichever paragraph element within that generation has a class attribute which belongs to class1 (using a period followed by the class name of interest). Alternatively, we could write a CSS Locator string which directs to all elements in the HTML document whose class attribute belongs to class1 by simply writing .class1.
+
+6. Class Status
+03:41 - 03:53
+Note that selecting a class like this in a CSS Locator directs us to all elements belonging to that class, even if they belong to other classes.
+
+7. Class Status
+03:53 - 04:05
+Recall that this is different than the XPath that we've learned where either using equality in the brackets forces an exact match of the class attribute ...or,
+
+8. Class Status
+04:05 - 04:11
+using the contains function, which searches for all matching substrings.
+
+9. Selectors with CSS
+04:11 - 04:38
+In the last chapter we learned how to use XPath within scrapy Selectors to select specific HTML elements and from there extract the data. Well, we can do the same with CSS Locators by simply using the css method rather than the xpath method within the Selector. You will get a chance to play with this in the exercises!
+
+10. C(SS) You Soon!
+04:38 - 04:48
+Now, we've seen how to translate many of the things we've learned from our lessons using XPath to that of CSS Locators.
+
+
+# The (X)Path to CSS Locators
+Many people prefer using CSS Locator notation to XPath notation. As we will see later, it often makes attribute selection very easy. To help get you more comfortable going back and forth between XPath and CSS Locator strings, we give you a chance in this exercise to do some direct "translation" between the two.
+
